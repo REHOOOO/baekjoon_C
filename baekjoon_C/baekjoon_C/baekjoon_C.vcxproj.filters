@@ -13,46 +13,58 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\입출력과 사칙연산">
+      <UniqueIdentifier>{8e881001-323a-4101-be45-b545433e010c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\조건문">
+      <UniqueIdentifier>{f785c958-18c8-458c-9784-440a836024bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2557.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="1000.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
     <ClCompile Include="1001.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="10998.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
     <ClCompile Include="1008.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
-    <ClCompile Include="10869.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="18108.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="10926.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="10430.C">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="2557.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
     <ClCompile Include="2588.C">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="11382.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
     <ClCompile Include="10171.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
     </ClCompile>
     <ClCompile Include="10172.C">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="10430.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="10869.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="10926.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="10998.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="11382.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="18108.C">
+      <Filter>소스 파일\입출력과 사칙연산</Filter>
+    </ClCompile>
+    <ClCompile Include="1330.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="9498.C">
+      <Filter>소스 파일\조건문</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
