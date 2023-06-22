@@ -39,5 +39,20 @@
     <ClCompile Include="10926.C">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="10430.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2588.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="11382.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10171.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="10172.C">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
