@@ -66,5 +66,20 @@
     <ClCompile Include="9498.C">
       <Filter>소스 파일\조건문</Filter>
     </ClCompile>
+    <ClCompile Include="2753.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="14681.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="2884.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="2525.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="2480.C">
+      <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
