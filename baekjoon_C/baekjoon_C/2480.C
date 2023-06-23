@@ -6,19 +6,35 @@ int main()
 {
 	int a, b, c;
 	scanf("%d %d %d", &a, &b, &c);
-	if ((a == b) && (b == c))
+	if ((a == b) && (b == c))	// 모두 같을 경우 
 	{
 		printf("%d", 10000 + a * 1000);
 	}
-	else if (a != b)	// a b가 다를 때 
+	else if (a == b) 
 	{
-		if ((a == c) || (b == c))	// a b가 다를 때 같은 눈이 2개 나오는 경우
+		printf("%d", 1000 + a * 100);
+	}
+	else if (a == c)
+	{
+		printf("%d", 1000 + a * 100);
+	}
+	else if (b == c)
+	{
+		printf("%d", 1000 + b * 100);
+	}
+	else
+	{
+		if ((a >= b) && (a >= c))	// a가 가장 클 경우
 		{
-			printf("%d", 1000 + c * 100);
+			printf("%d", a * 100);
 		}
-		else
+		else if ((b >= a) && (b >= c))	// b가 가장 클 경우
 		{
-			for ()
+			printf("%d", b * 100);
+		}
+		else if ((c >= a) && (c >= b))	// c가 가장 클 경우
+		{
+			printf("%d", c * 100);
 		}
 	}
 
