@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\조건문">
       <UniqueIdentifier>{f785c958-18c8-458c-9784-440a836024bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\반복문">
+      <UniqueIdentifier>{e30d02bc-1106-4ed7-b249-1b1e4e680b77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -80,6 +83,15 @@
     </ClCompile>
     <ClCompile Include="2480.C">
       <Filter>소스 파일\조건문</Filter>
+    </ClCompile>
+    <ClCompile Include="2739.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="10950.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="8393.C">
+      <Filter>소스 파일\반복문</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
