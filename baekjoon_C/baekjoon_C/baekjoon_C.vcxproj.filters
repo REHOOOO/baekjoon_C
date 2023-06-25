@@ -93,5 +93,32 @@
     <ClCompile Include="8393.C">
       <Filter>소스 파일\반복문</Filter>
     </ClCompile>
+    <ClCompile Include="25304.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="25314.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="15552.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="11021.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="11022.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="2438.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="2439.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="10952.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="10951.C">
+      <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
