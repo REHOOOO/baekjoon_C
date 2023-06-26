@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\반복문">
       <UniqueIdentifier>{e30d02bc-1106-4ed7-b249-1b1e4e680b77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1차원 배열">
+      <UniqueIdentifier>{9512bf0d-7c4e-4e1b-a299-ddcf1b402188}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -119,6 +122,24 @@
     </ClCompile>
     <ClCompile Include="10951.C">
       <Filter>소스 파일\반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="10807.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="10871.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="10818.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="2562.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="10810.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="10813.C">
+      <Filter>소스 파일\1차원 배열</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
