@@ -141,5 +141,8 @@
     <ClCompile Include="10813.C">
       <Filter>소스 파일\1차원 배열</Filter>
     </ClCompile>
+    <ClCompile Include="5597.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
