@@ -147,5 +147,11 @@
     <ClCompile Include="3052.C">
       <Filter>소스 파일\1차원 배열</Filter>
     </ClCompile>
+    <ClCompile Include="10811.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="1546.C">
+      <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
