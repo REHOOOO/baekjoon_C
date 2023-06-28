@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\1차원 배열">
       <UniqueIdentifier>{9512bf0d-7c4e-4e1b-a299-ddcf1b402188}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\문자열">
+      <UniqueIdentifier>{d65e959e-7bd4-4346-a570-f54917053854}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -152,6 +155,27 @@
     </ClCompile>
     <ClCompile Include="1546.C">
       <Filter>소스 파일\1차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="27866.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="2743.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="9086.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="11654.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="11720.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="10809.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="2675.C">
+      <Filter>소스 파일\문자열</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
