@@ -177,5 +177,17 @@
     <ClCompile Include="2675.C">
       <Filter>소스 파일\문자열</Filter>
     </ClCompile>
+    <ClCompile Include="1152.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="2908.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="5622.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="11718.C">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
