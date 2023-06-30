@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\문자열">
       <UniqueIdentifier>{d65e959e-7bd4-4346-a570-f54917053854}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\심화 1">
+      <UniqueIdentifier>{054dc666-2899-4916-a0d0-9b1698845fb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -188,6 +191,12 @@
     </ClCompile>
     <ClCompile Include="11718.C">
       <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="25083.C">
+      <Filter>소스 파일\심화 1</Filter>
+    </ClCompile>
+    <ClCompile Include="3003.C">
+      <Filter>소스 파일\심화 1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
