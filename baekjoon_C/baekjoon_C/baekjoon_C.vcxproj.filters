@@ -213,5 +213,8 @@
     <ClCompile Include="1316.C">
       <Filter>소스 파일\심화 1</Filter>
     </ClCompile>
+    <ClCompile Include="25206.C">
+      <Filter>소스 파일\심화 1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,2 +1,20 @@
-﻿  2941.C
+﻿  25206.C
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(23,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(24,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(28,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(29,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(33,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(34,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(38,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(39,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(43,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(44,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(48,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(49,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(53,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(54,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(58,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(59,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(63,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\25206.C(9,6): warning C4101: 'n' :참조되지 않은 지역 변수입니다.
   baekjoon_C.vcxproj -> D:\code\baekjoon_C\baekjoon_C\x64\Debug\baekjoon_C.exe
