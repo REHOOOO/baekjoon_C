@@ -222,5 +222,14 @@
     <ClCompile Include="2738.C">
       <Filter>소스 파일\2차원 배열</Filter>
     </ClCompile>
+    <ClCompile Include="2566.C">
+      <Filter>소스 파일\2차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="10798.C">
+      <Filter>소스 파일\2차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="2563.C">
+      <Filter>소스 파일\2차원 배열</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
