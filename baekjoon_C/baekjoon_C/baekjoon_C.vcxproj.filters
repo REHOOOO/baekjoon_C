@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\심화 1">
       <UniqueIdentifier>{054dc666-2899-4916-a0d0-9b1698845fb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\2차원 배열">
+      <UniqueIdentifier>{390a816f-9cdc-45c2-a778-0967626e2c2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -215,6 +218,9 @@
     </ClCompile>
     <ClCompile Include="25206.C">
       <Filter>소스 파일\심화 1</Filter>
+    </ClCompile>
+    <ClCompile Include="2738.C">
+      <Filter>소스 파일\2차원 배열</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
