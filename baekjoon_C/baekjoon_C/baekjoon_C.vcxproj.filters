@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\2차원 배열">
       <UniqueIdentifier>{390a816f-9cdc-45c2-a778-0967626e2c2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\일반 수학 1">
+      <UniqueIdentifier>{c1748df7-56f4-42b6-b2ac-79421ef60ac4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -230,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="2563.C">
       <Filter>소스 파일\2차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="2745.C">
+      <Filter>소스 파일\일반 수학 1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
