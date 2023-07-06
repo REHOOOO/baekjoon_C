@@ -10,20 +10,15 @@ int main()
 
 	scanf("%d %d %d", &a, &b, &v);
 
-	while (1)
+	
+	if ((v - b) % (a - b) != 0)
 	{
-		cnt = cnt + 1;
-
-		h = h + a;
-		if (h >= v)
-		{
-			break;
-		}
-
-		h = h - b;
+		printf("%d", (v - b) / (a - b) + 1);
 	}
-
-	printf("%d", cnt);
+	else
+	{
+		printf("%d", (v - b) / (a - b));
+	}
 
 	return 0;
 }
