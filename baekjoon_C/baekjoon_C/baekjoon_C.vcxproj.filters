@@ -249,5 +249,8 @@
     <ClCompile Include="2292.C">
       <Filter>소스 파일\일반 수학 1</Filter>
     </ClCompile>
+    <ClCompile Include="1193.C">
+      <Filter>소스 파일\일반 수학 1</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
