@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\일반 수학 1">
       <UniqueIdentifier>{c1748df7-56f4-42b6-b2ac-79421ef60ac4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\약수, 배수와 소수">
+      <UniqueIdentifier>{fb1f0802-7beb-4e10-824d-87474b1c1eba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -254,6 +257,9 @@
     </ClCompile>
     <ClCompile Include="2869.C">
       <Filter>소스 파일\일반 수학 1</Filter>
+    </ClCompile>
+    <ClCompile Include="5086.C">
+      <Filter>소스 파일\약수, 배수와 소수</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
