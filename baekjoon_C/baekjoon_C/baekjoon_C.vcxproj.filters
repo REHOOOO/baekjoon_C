@@ -261,5 +261,8 @@
     <ClCompile Include="5086.C">
       <Filter>소스 파일\약수, 배수와 소수</Filter>
     </ClCompile>
+    <ClCompile Include="2501.C">
+      <Filter>소스 파일\약수, 배수와 소수</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
