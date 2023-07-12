@@ -273,5 +273,8 @@
     <ClCompile Include="2581.C">
       <Filter>소스 파일\약수, 배수와 소수</Filter>
     </ClCompile>
+    <ClCompile Include="11653.C">
+      <Filter>소스 파일\약수, 배수와 소수</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
