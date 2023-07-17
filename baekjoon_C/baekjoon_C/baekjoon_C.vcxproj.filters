@@ -291,5 +291,8 @@
     <ClCompile Include="15894.C">
       <Filter>소스 파일\기하: 직사각형과 삼각형</Filter>
     </ClCompile>
+    <ClCompile Include="9063.C">
+      <Filter>소스 파일\기하: 직사각형과 삼각형</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
