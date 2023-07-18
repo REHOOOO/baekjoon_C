@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\기하: 직사각형과 삼각형">
       <UniqueIdentifier>{dfe8dd4e-bea5-4b00-a841-ce90edabbda0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Silver V">
+      <UniqueIdentifier>{6d095227-8f67-453e-b97c-0532cb26a747}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -293,6 +296,9 @@
     </ClCompile>
     <ClCompile Include="9063.C">
       <Filter>소스 파일\기하: 직사각형과 삼각형</Filter>
+    </ClCompile>
+    <ClCompile Include="4673.C">
+      <Filter>소스 파일\Silver V</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
