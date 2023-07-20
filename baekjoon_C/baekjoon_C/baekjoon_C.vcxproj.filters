@@ -303,5 +303,11 @@
     <ClCompile Include="2751.C">
       <Filter>소스 파일\Silver V</Filter>
     </ClCompile>
+    <ClCompile Include="1181.C">
+      <Filter>소스 파일\Silver V</Filter>
+    </ClCompile>
+    <ClCompile Include="11651.C">
+      <Filter>소스 파일\Silver V</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
