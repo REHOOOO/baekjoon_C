@@ -1,52 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>	// qsort 함수
 
 int num[1000000];
 
-void swap(int *a, int *b)
+int compare(const void* a, const void* b)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void qsort(int start, int end)
-{
-	if (start >= end)
-	{
-		return;
-	}
+	int num1 = *(int*)a; // void 포인터를 int 포인터로 변환한 뒤 역참조하여 값을 가져옴
+	int num2 = *(int*)b; // void 포인터를 int 포인터로 변환한 뒤 역참조하여 값을 가져옴
 	
-	int key = start;
-	int i = start + 1;
-	int j = end;
-	int temp;
-
-	while (i <= j)
+	if (num1 < num2)
 	{
-		while (i <= end && num[i] <= num[key])
-		{
-			i++;
-		}
-		while (j > start && num[j] >= num[key])
-		{
-			j--;
-		}
-
-		if (i > j)
-		{
-			swap(&num[key], &num[j]);
-		}
-		else
-		{
-			swap(&num[i], &num[j]);
-		}
-
-		qsort(start, j - 1);
-		qsort(j + 1, end);
+		return -1;
 	}
-}
 
+	if (num1 > num2)
+	{
+		return 1;
+	}
+
+	return 0;
+}
 
 int main()
 {
@@ -60,7 +34,7 @@ int main()
 		scanf("%d", &num[i]);
 	}
 
-	qsort(0, n - 1);
+	qsort(num, n, sizeof(int), compare);
 
 	for (i = 0; i < n; i++)
 	{
