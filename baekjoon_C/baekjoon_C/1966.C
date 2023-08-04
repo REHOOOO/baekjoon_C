@@ -56,7 +56,7 @@ void dequeue(Queue* queue)
 	Node* ptr;
 	if (isEmpty(queue))	// 큐가 비었을 때
 	{
-		return 0;
+		return;
 	}
 	ptr = queue->front;	// 맨 앞 노드가져온다
 	num = ptr->data;	// 전역변수에 데이터 저장 
@@ -72,6 +72,7 @@ int main()
 	int i, j, k;
 	int priority;
 	int cnt = 0;
+	int qcnt;
 	Queue queue;
 
 	scanf("%d", &t);
@@ -98,28 +99,30 @@ int main()
 
 		for (j = 9; j >= 1; j--)
 		{
-			for (k = 0; k < queue.count; k++)
+			qcnt = queue.count;	// 현재 큐의 노드 개수 (중간에 추가되는 노드 수는 배재한다)
+			for (k = 0; k < qcnt; k++)	// 큐의 노드 개수만큼 for문을 돌려준다
 			{
-				dequeue(&queue);
-				if (num == j)
+				dequeue(&queue);	// 노드 출력
+				if (num == j)	// 중요도가 j일 경우
 				{
-					if (chk == 1)
+					if (chk == 1)	// chk가 1이면 for문을 나간다
 					{
 						cnt = cnt + 1;
 						break;
 					}
-					else
+					else	// chk가 1이 아니면 cnt를 1 증가시키고 k for문을 초기화시켜준다 (이 시점부터 다시 for문을 돌림)
 					{
 						cnt = cnt + 1;
+						k = -1;
+						qcnt = queue.count;
 					}
 				}
-				else
+				else	// 중요도가 j가 아닐경우 다시 큐에 노드를 추가시켜준다
 				{
-					cnt = cnt + 1;
 					enqueue(&queue, num, chk);
 				}
 			}
-			if (chk == 1)
+			if (num == j && chk == 1)	// 중요도가 j이고 chk가 1이면 for문을 나간다
 			{
 				break;
 			}
