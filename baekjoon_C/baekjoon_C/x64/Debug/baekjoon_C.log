@@ -1,2 +1,4 @@
-﻿  10773.C
+﻿  1966.C
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\1966.C(59,11): warning C4098: 'dequeue': 'void' 함수에서 값을 반환하고 있습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\1966.C(101,32): warning C4047: '<': 'int'의 간접 참조 수준이 'int *'과(와) 다릅니다.
   baekjoon_C.vcxproj -> D:\code\baekjoon_C\baekjoon_C\x64\Debug\baekjoon_C.exe

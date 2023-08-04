@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+////// 전역변수 ///////
+int chk;
+int num;
+
 ///////////////// 큐 설정 //////////////////
 typedef struct Node	// 노드 정의
 {
@@ -54,26 +58,73 @@ void dequeue(Queue* queue)
 	{
 		return 0;
 	}
+	ptr = queue->front;	// 맨 앞 노드가져온다
+	num = ptr->data;	// 전역변수에 데이터 저장 
+	chk = ptr->check;
+	queue->front = ptr->next;	// 큐의 맨 앞을 ptr의 다음 노드로 설정
+	free(ptr);	// ptr노드 해제 
+	queue->count--;	// 큐 내부의 노드 개수를 1 감소
 }
 
 int main()
 {
 	int t, n, m;
-	int i, j;
-	int max;
-	int arr[100];
+	int i, j, k;
+	int priority;
+	int cnt = 0;
+	Queue queue;
 
 	scanf("%d", &t);
 
 	for (i = 0; i < t; i++)
 	{
+		cnt = 0;
+		initQueue(&queue);	// 큐 초기화
+
 		scanf("%d %d", &n, &m);
 		for (j = 0; j < n; j++)
 		{
-			
+			scanf("%d", &priority);	// 중요도를 입력받는다
+			if (j == m)
+			{
+				enqueue(&queue, priority, 1);	// m번째 노드는 check가 1
+			}
+			else
+			{
+				enqueue(&queue, priority, 0);
+			}
 		}
 
-		
+
+		for (j = 9; j >= 1; j--)
+		{
+			for (k = 0; k < queue.count; k++)
+			{
+				dequeue(&queue);
+				if (num == j)
+				{
+					if (chk == 1)
+					{
+						cnt = cnt + 1;
+						break;
+					}
+					else
+					{
+						cnt = cnt + 1;
+					}
+				}
+				else
+				{
+					cnt = cnt + 1;
+					enqueue(&queue, num, chk);
+				}
+			}
+			if (chk == 1)
+			{
+				break;
+			}
+		}
+		printf("%d\n", cnt);
 	}
 
 	return 0;
