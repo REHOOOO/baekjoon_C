@@ -342,5 +342,8 @@
     <ClCompile Include="1966.C">
       <Filter>소스 파일\Silver III</Filter>
     </ClCompile>
+    <ClCompile Include="2606.C">
+      <Filter>소스 파일\Silver III</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
