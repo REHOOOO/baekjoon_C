@@ -3,15 +3,14 @@
 
 int main()
 {
-	int n, num;
-	int com[100] = { 0, };
-	com[0] = 1;
-	int pair[10000][2] = { 0, };
-	int i;
-	int c1, c2;
-	int cnt = 0;
+	int graph[100][100] = { 0, };
+	int visit[100] = { 0, };
+	visit[0] = 1;
+	int com, num, c1, c2;
+	int i, j, k;
+	int cnt = -1;
 
-	scanf("%d", &n);
+	scanf("%d", &com);
 	scanf("%d", &num);
 
 	for (i = 0; i < num; i++)
@@ -19,26 +18,34 @@ int main()
 		scanf("%d %d", &c1, &c2);
 		c1 = c1 - 1;
 		c2 = c2 - 1;
-		pair[i][0] = c1;
-		pair[i][1] = c2;
-
-		if ((com[c1] == 1 && com[c2] == 0) || (com[c1] == 0 && com[c2] == 1))
-		{
-			cnt = cnt + 1;
-			com[c1] = 1;
-			com[c2] = 1;
-		}
+		graph[c1][c2] = 1;
+		graph[c2][c1] = 1;
 	}
 
-	for (i = 0; i < num; i++)
+	for (k = 0; k < com; k++)
 	{
-		c1 = pair[i][0];
-		c2 = pair[i][1];
-		if ((com[c1] == 1 && com[c2] == 0) || (com[c1] == 0 && com[c2] == 1))
+		for (i = 0; i < com; i++)
+		{
+			for (j = 0; j < com; j++)
+			{
+				if (visit[i] == 1 || visit[j] == 1)
+				{
+					if (graph[i][j] == 1 || graph[j][i] == 1)
+					{
+						visit[i] = 1;
+						visit[j] = 1;
+					}
+				}
+			}
+		}
+	}
+	
+
+	for (i = 0; i < com; i++)
+	{
+		if (visit[i] == 1)
 		{
 			cnt = cnt + 1;
-			com[c1] = 1;
-			com[c2] = 1;
 		}
 	}
 
