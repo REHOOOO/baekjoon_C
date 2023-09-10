@@ -52,6 +52,9 @@
     <Filter Include="소스 파일\Silver III">
       <UniqueIdentifier>{560dd0a5-60b0-4c76-b335-504de29bdede}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Silver II">
+      <UniqueIdentifier>{e0d8776a-e5aa-42b2-a66d-baa0b3123e0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -368,6 +371,9 @@
     </ClCompile>
     <ClCompile Include="15657.C">
       <Filter>소스 파일\Silver III</Filter>
+    </ClCompile>
+    <ClCompile Include="1541.C">
+      <Filter>소스 파일\Silver II</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
