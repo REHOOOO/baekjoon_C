@@ -375,5 +375,8 @@
     <ClCompile Include="1541.C">
       <Filter>소스 파일\Silver II</Filter>
     </ClCompile>
+    <ClCompile Include="1260.C">
+      <Filter>소스 파일\Silver II</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
