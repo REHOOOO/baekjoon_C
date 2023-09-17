@@ -1,10 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int n, m;
-int arr[8] = { 0, };
-int visit[8] = { 0, };
-int num[8] = { 0, };
+int n, m, v;
+int arr[1001] = { 0, };
+int visit[1001] = { 0, };
+int num[1001] = { 0, };
+int edge[1001][1001];
+int edgeflag[1001] = { 0, };
 
 void dfs(int depth, int start)
 {
@@ -38,5 +40,18 @@ void dfs(int depth, int start)
 
 int main()
 {
-	
+	int i;
+	int a, b;
+
+	scanf("%d %d %d", &n, &m, &v);
+
+	for (i = 0; i < m; i++)
+	{
+		scanf("%d %d", &a, &b);
+		edge[a][edgeflag[a]] = b;
+		edge[b][edgeflag[b]] = a;
+		edgeflag[a]++;
+		edgeflag[b]++;
+
+	}
 }
