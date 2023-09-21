@@ -6,11 +6,12 @@ int arr[1001] = { 0, };
 int visit[1001] = { 0, };
 int edge[1001][1001];
 int edgeflag[1001] = { 0, };
+int arrlen = 0;
 
 void dfs(int depth, int start)
 {
 	int i,j;
-	if (depth == m)	// 깊이가 m이면 현재까지 저장했던 수열을 출력
+	if (depth == n)	// 깊이가 m이면 현재까지 저장했던 수열을 출력
 	{
 		for (i = 0; i < m; i++)
 		{
@@ -20,24 +21,27 @@ void dfs(int depth, int start)
 	}
 	else
 	{
-		for (i = start; i <= n; i++)
+		arr[depth] = start;
+		arrlen = depth;
+		visit[start] = 1;
+		for (i = 1; i <= n; i++)	// 오름차 순으로 숫자를 찾는다
 		{
-			if (visit[i] == 1)	// 이미 사용한 숫자이면 넘어간다
+			for (j = 0; j < edgeflag[start]; j++)	
 			{
-				continue;
-			}
-			else
-			{
-				arr[depth] = i;	// 현재 깊이의 숫자는 i로 저장
-				visit[i] = 1;	// 사용했다는 정보를 저장
-				for (j = 0; j < edgeflag[i]; j++)
+				if (i == edge[start][j])	// 오름차 순으로 숫자를 찾던 도중 현재 edge에 연결된 edge의 숫자가 나온다면 
 				{
-
+					if (visit[edge[start][j]] == 1)	// 이미 사용한 숫자이면 넘어간다
+					{
+						continue;
+					}
+					else
+					{
+						dfs(depth + 1, edge[start][j]);	// 다음 깊이로 넘어간다 / 시작 숫자를 정해준다
+					}
 				}
-				dfs(depth + 1, i);	// 다음 깊이로 넘어간다 / 시작 숫자를 정해준다
-				visit[i] = 0;	// 다음 깊이에서 작업이 끝나면 초기화 시켜준다
 			}
 		}
+		
 	}
 }
 
@@ -58,4 +62,10 @@ int main()
 	}
 
 	dfs(0, v);
+	for (i = 0; i <= arrlen; i++)	// n개 만큼 숫자를 출력해준다 (만약 n보다 작
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+
 }
