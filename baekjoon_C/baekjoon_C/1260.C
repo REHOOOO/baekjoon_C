@@ -10,15 +10,7 @@ int arrlen = 0;
 
 void dfs(int depth, int start)
 {
-	//////////// 초기화 //////////////
 	int i, j;
-	for (i = 0; i < 1001; i++)
-	{
-		arr[i] = 0;
-		visit[i] = 0;
-	}
-	arrlen = 0;
-	/////////////////////////////////
 
 	arr[depth] = start;
 	arrlen = depth;
@@ -46,50 +38,54 @@ void dfs(int depth, int start)
 
 void bfs(int breadth, int start)
 {
-	//////////// 초기화 //////////////
-	int i, j;
-	for (i = 0; i < 1001; i++)
-	{
-		arr[i] = 0;
-		visit[i] = 0;
-	}
-	arrlen = 0;
-	/////////////////////////////////
+	int i, j, k;
+	int flag = 0;
+
+	arrlen = breadth;
 
 	if (breadth == 0)
 	{
-		arr[breadth] = start;
-		visit[start] = 1;
-	}
-	
-	for (i = 1; i <= n; i++) // arr에 현재 너비에 있는 숫자들 추가시켜주기
-	{
-		for (j = 0; j < edgeflag[start]; j++)	
+		if (visit[start] == 0)
 		{
-			if (i == edge[start][j])
-			{
-				if (visit[i] == 0)
-				{
-					breadth++;
-					arr[breadth] = i;
-					visit[i] = 1;
-				}
-			}
+			arr[breadth] = start;
+			visit[start] = 1;
 		}
 	}
 
 	for (i = 1; i <= n; i++)
 	{
-		for (j = 0; j < edgeflag[start]; j++)	// 다음 edge들로 이동하기
+		if (visit[i] == 1)
 		{
-			if (i == edge[start][j])
+			for (j = 1; j <= n; j++)
 			{
-				
+				for (k = 0; k < edgeflag[i]; k++)
+				{
+					if (j == edge[i][k])
+					{
+						if (visit[j] == 0)
+						{
+							breadth++;
+							arr[breadth] = j;
+						}
+					}
+				}
 			}
 		}
 	}
 
+	for (i = 0; i <= breadth; i++)
+	{
+		if ((arr[i] != 0) && (visit[arr[i]] == 0))
+		{
+			visit[arr[i]] = 1;
+			flag = 1;
+		}
+	}
 
+	if (flag == 1)
+	{
+		dfs(breadth, start); // start값은 아무 값이나 주어도 됨
+	}
 }
 
 int main()
@@ -109,11 +105,24 @@ int main()
 	}
 
 	dfs(0, v);
-	for (i = 0; i <= arrlen; i++)	
+	for (i = 0; i <= arrlen; i++)
 	{
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
 
-	
+	/////////////////// 초기화 //////////////////////
+	for (i = 0; i < 1001; i++)
+	{
+		arr[i] = 0;
+		visit[i] = 0;
+	}
+	arrlen = 0;
+	//////////////////////////////////////////////////
+
+	bfs(0, v);
+	for (i = 0; i <= arrlen; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 }
