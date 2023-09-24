@@ -2,19 +2,16 @@
 #include <stdio.h>
 
 int n, m, v;
-int arr[1001] = { 0, };
 int visit[1001] = { 0, };
 int edge[1001][1001];
 int edgeflag[1001] = { 0, };
-int arrlen = 0;
 int queue[1001];
 
 void dfs(int depth, int start)
 {
 	int i, j;
 
-	arr[depth] = start;	// 바로 출력해도 됨
-	arrlen = depth;
+	printf("%d ", start);
 	visit[start] = 1;
 	for (i = 1; i <= n; i++)	// 오름차 순으로 숫자를 찾는다
 	{
@@ -33,8 +30,6 @@ void dfs(int depth, int start)
 			}
 		}
 	}
-
-
 }
 
 void bfs(int breadth, int start)
@@ -91,19 +86,12 @@ int main()
 	}
 
 	dfs(0, v);
-	for (i = 0; i <= arrlen; i++)
-	{
-		printf("%d ", arr[i]);
-	}
 	printf("\n");
-
 	/////////////////// 초기화 //////////////////////
 	for (i = 0; i < 1001; i++)
 	{
-		arr[i] = 0;
 		visit[i] = 0;
 	}
-	arrlen = 0;
 	//////////////////////////////////////////////////
 
 	bfs(0, v);
