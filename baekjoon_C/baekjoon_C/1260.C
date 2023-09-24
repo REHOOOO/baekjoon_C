@@ -7,12 +7,13 @@ int visit[1001] = { 0, };
 int edge[1001][1001];
 int edgeflag[1001] = { 0, };
 int arrlen = 0;
+int queue[1001];
 
 void dfs(int depth, int start)
 {
 	int i, j;
 
-	arr[depth] = start;
+	arr[depth] = start;	// 바로 출력해도 됨
 	arrlen = depth;
 	visit[start] = 1;
 	for (i = 1; i <= n; i++)	// 오름차 순으로 숫자를 찾는다
@@ -38,53 +39,38 @@ void dfs(int depth, int start)
 
 void bfs(int breadth, int start)
 {
-	int i, j, k;
-	int flag = 0;
+	int front = 0;
+	int rear = 0;
+	int pop;
+	int i,j;
 
-	arrlen = breadth;
+	printf("%d ", start);
+	queue[0] = start;
+	rear++;
+	visit[start] = 1;
 
-	if (breadth == 0)
+	while (front < rear)
 	{
-		if (visit[start] == 0)
-		{
-			arr[breadth] = start;
-			visit[start] = 1;
-		}
-	}
+		pop = queue[front];		// queue에 저장된 숫자를 가져온다 
+		front++;
 
-	for (i = 1; i <= n; i++)
-	{
-		if (visit[i] == 1)
+		for (i = 1; i <= n; i++)	// 오름차순으로 숫자를 찾는다
 		{
-			for (j = 1; j <= n; j++)
+			for (j = 0; j < edgeflag[pop]; j++)
 			{
-				for (k = 0; k < edgeflag[i]; k++)
+				if (i==edge[pop][j])	// 연결되는 엣지를 찾고
 				{
-					if (j == edge[i][k])
+					if (visit[i] == 0)	// 방문이 안된 엣지라면
 					{
-						if (visit[j] == 0)
-						{
-							breadth++;
-							arr[breadth] = j;
-						}
+						printf("%d ", i);	// 출력
+						queue[rear] = i;	// queue에 넣어준다
+						rear++;
+						visit[i] = 1;
 					}
 				}
+
 			}
 		}
-	}
-
-	for (i = 0; i <= breadth; i++)
-	{
-		if ((arr[i] != 0) && (visit[arr[i]] == 0))
-		{
-			visit[arr[i]] = 1;
-			flag = 1;
-		}
-	}
-
-	if (flag == 1)
-	{
-		dfs(breadth, start); // start값은 아무 값이나 주어도 됨
 	}
 }
 
@@ -121,8 +107,4 @@ int main()
 	//////////////////////////////////////////////////
 
 	bfs(0, v);
-	for (i = 0; i <= arrlen; i++)
-	{
-		printf("%d ", arr[i]);
-	}
 }
