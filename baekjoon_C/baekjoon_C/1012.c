@@ -4,21 +4,21 @@
 
 int main()
 {
-    int t,m,n,k;
-    int i,j;
-    int xy[51][51]={0,};
-    int visit[51][51]={0,};
-    int x,y;
-    
-	scanf("%d",&t);
+	int t, m, n, k;
+	int i, j;
+	int xy[51][51] = { 0, };
+	int visit[51][51] = { 0, };
+	int x, y;
 
-    for(i=0;i<t;i++)
-    {
-        scanf("%d %d %d",&m,&n,&k);
-        for(j=0;j<k;k++)
-        {
-            scanf("%d %d",&x,&y);
-            xy[x][y]=1;
-        }
-    }
+	scanf("%d", &t);
+
+	for (i = 0; i < t; i++)
+	{
+		scanf("%d %d %d", &m, &n, &k);
+		for (j = 0; j < k; k++)
+		{
+			scanf("%d %d", &x, &y);
+			xy[x][y] = 1;
+		}
+	}
 }
