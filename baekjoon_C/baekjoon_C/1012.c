@@ -16,6 +16,18 @@ int main()
 	for (i = 0; i < t; i++)
 	{
 		scanf("%d %d %d", &m, &n, &k);
+
+		//////// ÃÊ±âÈ­ ///////////
+		for (j = 0; j < m; j++)
+		{
+			for (l = 0; l < n; l++)
+			{
+				xy[j][l] = 0;
+				visit[j][l] = 0;
+			}
+		}
+		///////////////////////////
+
 		for (j = 0; j < k; j++)
 		{
 			scanf("%d %d", &x, &y);
@@ -30,13 +42,13 @@ int main()
 			{
 				if (xy[j][l] == 1)
 				{
-					if (visit[j][l] == 0 && visit[j - 1][l] == 0 && visit[j][l - 1] == 0 && visit[j + 1][l] == 0 && visit[j][l + 1] == 0)
+					if (visit[j][l] == 1 || visit[j - 1][l] == 1 || visit[j][l - 1] == 1 || visit[j + 1][l] == 1 || visit[j][l + 1] == 1)
 					{
-						cnt++;
 						visit[j][l] = 1;
 					}
 					else
 					{
+						cnt++;
 						visit[j][l] = 1;
 					}
 				}
