@@ -1,13 +1,56 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
+int xy[51][51] = { 0, };
+int visit[51][51] = { 0, };
+
+void check(int j, int l)
+{
+	if (xy[j][l] == 1)
+	{
+		if (visit[j][l] == 0)
+		{
+			visit[j][l] = 1;
+		}
+	}
+
+	if (xy[j + 1][l] == 1)
+	{
+		if (visit[j + 1][l] == 0)
+		{
+			check(j + 1, l);
+		}
+	}
+
+	if (xy[j - 1][l] == 1)
+	{
+		if (visit[j - 1][l] == 0)
+		{
+			check(j - 1, l);
+		}
+	}
+
+	if (xy[j][l + 1] == 1)
+	{
+		if (visit[j][l + 1] == 0)
+		{
+			check(j, l + 1);
+		}
+	}
+
+	if (xy[j][l - 1] == 1)
+	{
+		if (visit[j][l - 1] == 0)
+		{
+			check(j, l - 1);
+		}
+	}
+}
 
 int main()
 {
 	int t, m, n, k;
 	int i, j, l;
-	int xy[51][51] = { 0, };
-	int visit[51][51] = { 0, };
 	int x, y;
 	int cnt;
 
@@ -42,14 +85,10 @@ int main()
 			{
 				if (xy[j][l] == 1)
 				{
-					if (visit[j][l] == 1 || visit[j - 1][l] == 1 || visit[j][l - 1] == 1 || visit[j + 1][l] == 1 || visit[j][l + 1] == 1)
+					if (visit[j][l] == 0)
 					{
-						visit[j][l] = 1;
-					}
-					else
-					{
+						check(j, l);
 						cnt++;
-						visit[j][l] = 1;
 					}
 				}
 			}
