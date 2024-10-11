@@ -58,6 +58,9 @@
     <Filter Include="소스 파일\Silver I">
       <UniqueIdentifier>{b9289a43-9e1f-4f4e-98c3-45027594a9ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Gold V">
+      <UniqueIdentifier>{28ea60d2-fdba-490b-a98b-01d3e072b108}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1000.C">
@@ -386,6 +389,9 @@
     </ClCompile>
     <ClCompile Include="2178.C">
       <Filter>소스 파일\Silver I</Filter>
+    </ClCompile>
+    <ClCompile Include="7576.C">
+      <Filter>소스 파일\Gold V</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
