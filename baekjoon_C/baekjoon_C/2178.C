@@ -3,54 +3,55 @@
 
 int n, m;
 int maze[100][100] = { 0, };
-int result = 10000;
+int queue[10000][2] = { 0, };
 
-int search(int y, int x, int cnt)
+int BFS()
 {
-	if (result == n + m - 1)	// 이미 최소값을 찾은 경우 
-	{
-		return 0;
-	}
+	int front = 0;
+	int rear = 1;
 
-	if (result < cnt)	// 현재 최소값보다 cnt가 커질 경우
+	while (front < rear)
 	{
-		return 0;
-	}
+		int x = queue[front][0];
+		int y = queue[front][1];
+		front++;
 
-	if ((y == n - 1) && (x == m - 1))	// 마지막에 도달했을 경우
-	{
-		if (result > cnt)
+		if (x == m - 1 && y == n - 1)
 		{
-			result = cnt;
+			break;
 		}
-	}
 
-	if ((y + 1 < n) && (maze[y + 1][x] == 1))	// 아래가 1일 경우
-	{
-		maze[y][x] = 0;
-		search(y + 1, x, cnt + 1);
-		maze[y][x] = 1;
-	}
+		if ((y + 1 < n) && (maze[y + 1][x] == 1))	// 아래가 1일 경우
+		{
+			maze[y + 1][x] = maze[y][x] + 1;
+			queue[rear][0] = x;
+			queue[rear][1] = y + 1;
+			rear++;
+		}
 
-	if ((x + 1 < m) && (maze[y][x + 1] == 1))	// 오른쪽이 1일 경우
-	{
-		maze[y][x] = 0;
-		search(y, x + 1, cnt + 1);
-		maze[y][x] = 1;
-	}
+		if ((x + 1 < m) && (maze[y][x + 1] == 1))	// 오른쪽이 1일 경우
+		{
+			maze[y][x + 1] = maze[y][x] + 1;
+			queue[rear][0] = x + 1;
+			queue[rear][1] = y;
+			rear++;
+		}
 
-	if ((y - 1 >= 0) && (maze[y - 1][x] == 1))	// 위가 1일 경우
-	{
-		maze[y][x] = 0;
-		search(y - 1, x, cnt + 1);
-		maze[y][x] = 1;
-	}
+		if ((y - 1 >= 0) && (maze[y - 1][x] == 1))	// 위가 1일 경우
+		{
+			maze[y - 1][x] = maze[y][x] + 1;
+			queue[rear][0] = x;
+			queue[rear][1] = y - 1;
+			rear++;
+		}
 
-	if ((x - 1 >= 0) && (maze[y][x - 1] == 1))	// 왼쪽이 1일 경우
-	{
-		maze[y][x] = 0;
-		search(y, x - 1, cnt + 1);
-		maze[y][x] = 1;
+		if ((x - 1 >= 0) && (maze[y][x - 1] == 1))	// 왼쪽이 1일 경우
+		{
+			maze[y][x - 1] = maze[y][x] + 1;
+			queue[rear][0] = x - 1;
+			queue[rear][1] = y;
+			rear++;
+		}
 	}
 
 	return 0;
@@ -79,8 +80,8 @@ int main()
 		}
 	}
 
-	search(0, 0, 1);
-	printf("%d", result);
+	BFS();
+	printf("%d", maze[n - 1][m - 1]);
 
 	return 0;
 }
