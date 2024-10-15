@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
-#define MAX(X,Y) ((X) > (Y) ? (X) : (Y))
-
 int solution[5000] = { 0, };
 
 int main()
@@ -43,6 +40,18 @@ int main()
 		}
 	}
 
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<2-i;j++)
+		{
+			if(result[j]>result[j+1])
+			{
+				temp = result[j];
+				result[j] = result[j+1];
+				result[j+1] = temp;
+			}
+		}
+	}
 
 	printf("%d %d %d", result[0], result[1], result[2]);
 
