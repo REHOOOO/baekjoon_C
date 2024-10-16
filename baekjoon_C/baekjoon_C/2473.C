@@ -2,54 +2,76 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int solution[5000] = { 0, };
+long long int solution[5000] = { 0, };
 
 int main()
 {
 	int n;
-	int i, j, k;
-	double min = 3000000000;
+	int i, j;
+	long long int min = 4000000000;
 	int result[3] = { 0, };
 	int temp;
+	int left, right;
 
 	scanf("%d", &n);
 
 	for (i = 0; i < n; i++)
 	{
-		scanf("%d", &solution[i]);
+		scanf("%lld", &solution[i]);
 	}
 
-	for (i = 0; i < n; i++)
+	///// 버블 정렬 /////
+	for(i=0;i<n;i++)
 	{
-		for (j = i + 1; j < n; j++)
+		for(j=0;j<n-1-i;j++)
 		{
-			for (k = 0; k < n; k++)
+			if(solution[j]>solution[j+1])
 			{
-				if (k == i || k == j)
-				{
-					continue;
-				}
-				else if (min > abs(solution[i] + solution[j] + solution[k]))
-				{
-					min = abs(solution[i] + solution[j] + solution[k]);
-					result[0] = solution[i];
-					result[1] = solution[j];
-					result[2] = solution[k];
-				}
+				temp = solution[j];
+				solution[j] = solution[j+1];
+				solution[j+1] = temp;
 			}
 		}
 	}
 
-	for(i=0;i<3;i++)
+	for (i = 0; i < n-2; i++)
 	{
-		for(j=0;j<2-i;j++)
+		left = i+1;
+		right = n - 1;
+
+		while (solution[left] < solution[right])
 		{
-			if(result[j]>result[j+1])
+			long long int calc = solution[i] + solution[left] + solution[right];	// 계산값
+
+			if (calc == 0)	// 계산값이 0일 경우
 			{
-				temp = result[j];
-				result[j] = result[j+1];
-				result[j+1] = temp;
+				min = abs(calc);
+				result[0] = solution[i];
+				result[1] = solution[left];
+				result[2] = solution[right];
+				break;
 			}
+			else if (min > abs(calc))	// 계산값이 min보다 작을 경우
+			{
+				min = abs(calc);
+				result[0] = solution[i];
+				result[1] = solution[left];
+				result[2] = solution[right];
+			}
+
+			if (calc > 0)	// 계산값이 양수일 경우
+			{
+				right--;
+			}
+			else if (calc < 0)	//계산값이 음수일 경우
+			{
+				left++;
+			}
+		}
+
+		if (min == 0)
+		{
+			break;
 		}
 	}
 
