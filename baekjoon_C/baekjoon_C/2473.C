@@ -8,8 +8,8 @@ int main()
 {
 	int n;
 	int i, j;
-	long long int min = 4000000000;
-	int result[3] = { 0, };
+	long long int min = 5000000000;
+	long long int result[3] = { 0, };
 	int temp;
 	int left, right;
 
@@ -20,7 +20,7 @@ int main()
 		scanf("%lld", &solution[i]);
 	}
 
-	///// ¹öºí Á¤·Ä /////
+	///// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ /////
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n-1-i;j++)
@@ -39,11 +39,11 @@ int main()
 		left = i+1;
 		right = n - 1;
 
-		while (solution[left] < solution[right])
+		while (left < right)
 		{
-			long long int calc = solution[i] + solution[left] + solution[right];	// °è»ê°ª
+			long long int calc = solution[i] + solution[left] + solution[right];	// ï¿½ï¿½ê°ª
 
-			if (calc == 0)	// °è»ê°ªÀÌ 0ÀÏ °æ¿ì
+			if (calc == 0)	// ï¿½ï¿½ê°ªï¿½ï¿½ 0ï¿½ï¿½ ï¿½ï¿½ï¿½
 			{
 				min = abs(calc);
 				result[0] = solution[i];
@@ -51,7 +51,7 @@ int main()
 				result[2] = solution[right];
 				break;
 			}
-			else if (min > abs(calc))	// °è»ê°ªÀÌ minº¸´Ù ÀÛÀ» °æ¿ì
+			else if (min > abs(calc))	// ï¿½ï¿½ê°ªï¿½ï¿½ minï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			{
 				min = abs(calc);
 				result[0] = solution[i];
@@ -59,11 +59,11 @@ int main()
 				result[2] = solution[right];
 			}
 
-			if (calc > 0)	// °è»ê°ªÀÌ ¾ç¼öÀÏ °æ¿ì
+			if (calc > 0)	// ï¿½ï¿½ê°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			{
 				right--;
 			}
-			else if (calc < 0)	//°è»ê°ªÀÌ À½¼öÀÏ °æ¿ì
+			else if (calc < 0)	//ï¿½ï¿½ê°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			{
 				left++;
 			}
@@ -75,7 +75,7 @@ int main()
 		}
 	}
 
-	printf("%d %d %d", result[0], result[1], result[2]);
+	printf("%lld %lld %lld", result[0], result[1], result[2]);
 
 	return 0;
 }
