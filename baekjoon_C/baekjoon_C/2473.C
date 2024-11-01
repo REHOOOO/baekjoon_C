@@ -2,14 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long long int solution[5000] = { 0, };
+int compare(const void* a, const void* b) { //오름차 순으로 정렬 
+	return (*(int*)a - *(int*)b);
+}
+
+int solution[5000] = { 0, };
 
 int main()
 {
 	int n;
 	int i, j;
 	long long int min = 5000000000;
-	long long int result[3] = { 0, };
+	int result[3] = { 0, };
 	int temp;
 	int left, right;
 
@@ -17,22 +21,10 @@ int main()
 
 	for (i = 0; i < n; i++)
 	{
-		scanf("%lld", &solution[i]);
+		scanf("%d", &solution[i]);
 	}
 
-	/////  버블 정렬 /////
-	for(i=0;i<n;i++)
-	{
-		for(j=0;j<n-1-i;j++)
-		{
-			if(solution[j]>solution[j+1])
-			{
-				temp = solution[j];
-				solution[j] = solution[j+1];
-				solution[j+1] = temp;
-			}
-		}
-	}
+	qsort(solution, n, sizeof(int), compare);
 
 	for (i = 0; i < n-2; i++)
 	{
@@ -41,7 +33,7 @@ int main()
 
 		while (left < right)
 		{
-			long long int calc = solution[i] + solution[left] + solution[right];	// 계산값
+			long long int calc = (long long int)solution[i] + solution[left] + solution[right];	// 계산값
 
 			if (calc == 0)	// 계산값이 0일 경우
 			{
@@ -75,7 +67,7 @@ int main()
 		}
 	}
 
-	printf("%lld %lld %lld", result[0], result[1], result[2]);
+	printf("%d %d %d", result[0], result[1], result[2]);
 
 	return 0;
 }
