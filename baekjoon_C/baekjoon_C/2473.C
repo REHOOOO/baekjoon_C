@@ -11,10 +11,9 @@ int solution[5000] = { 0, };
 int main()
 {
 	int n;
-	int i, j;
+	int i;
 	long long int min = 5000000000;
 	int result[3] = { 0, };
-	int temp;
 	int left, right;
 
 	scanf("%d", &n);
@@ -28,24 +27,26 @@ int main()
 
 	for (i = 0; i < n-2; i++)
 	{
-		left = i+1;
+		left = i + 1;
 		right = n - 1;
 
 		while (left < right)
 		{
 			long long int calc = (long long int)solution[i] + solution[left] + solution[right];	// 계산값
 
+			
+
 			if (calc == 0)	// 계산값이 0일 경우
 			{
-				min = abs(calc);
+				min = llabs(calc);
 				result[0] = solution[i];
 				result[1] = solution[left];
 				result[2] = solution[right];
 				break;
 			}
-			else if (min > abs(calc))	//계산값이 min보다 작을 경우
+			else if (min > llabs(calc))	//계산값이 min보다 작을 경우
 			{
-				min = abs(calc);
+				min = llabs(calc);
 				result[0] = solution[i];
 				result[1] = solution[left];
 				result[2] = solution[right];
