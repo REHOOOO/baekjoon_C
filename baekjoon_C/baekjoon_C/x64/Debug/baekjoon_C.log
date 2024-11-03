@@ -1,8 +1,2 @@
-﻿  2473.C
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(40,15): warning C4244: '함수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(46,23): warning C4244: '함수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(48,15): warning C4244: '함수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(14,9): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
-D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2473.C(17,6): warning C4101: 'temp' :참조되지 않은 지역 변수입니다.
+﻿  2166.C
   baekjoon_C.vcxproj -> D:\code\baekjoon_C\baekjoon_C\x64\Debug\baekjoon_C.exe
