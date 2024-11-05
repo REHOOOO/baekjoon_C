@@ -6,12 +6,15 @@ int main()
 {
 	int V, E;
 	int i;
-	int tree[100000][3];
+	int a, b, c;
+	int tree[100000][10000]={0,};
 
 	scanf("%d %d", &V, &E);
 
 	for(i=0;i<E;i++)
 	{
-		scanf("%d %d %d", &tree[i][0], &tree[i][1], &tree[i][2]);
+		scanf("%d %d %d", &a, &b, &c);
+		tree[a][b]=c;
+		tree[b][a]=c;
 	}
 }
