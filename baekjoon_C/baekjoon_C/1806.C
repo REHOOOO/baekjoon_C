@@ -19,33 +19,20 @@ int main()
 		scanf("%d", &num[i]);
 	}
 
-	while (end <= N)
-	{
-		if (sum >= S) // 현재 부분합이 S 이상이면 
-		{
-			if (result > (end - start)) // result보다 현재 선택된 수의 개수가 작다면
-			{
-				result = end - start;	// result에 현재 개수 저장
-			}
-			sum -= num[start++]; // 시작지점을 이동 (이동하기 전에 시작지점 값을 빼준다)
-		}
-		else // 현재 부분합이 S가 안된다면
-		{
-			if (end < N) // 끝 지점이 N보다 작다면 
-			{
-				sum += num[end++]; // sum에 끝지점을 더해주고 끝지점을 이동시켜준다
-			}
-			else
-			{
-				break;
-			}
-		}
+	while (end < N) {
+		sum += num[end++]; // 끝 지점을 더해주고 끝 지점 이동
 
-		if (result == 1)	// 만약 sum이 1이라면 (최소값)
-		{
-			break;
+		while (sum >= S) // 합이 S 이상이면
+		{ 
+			if (result > (end - start)) // result가 현재 선택 개수보다 크다면
+			{
+				result = end - start; // 최소 길이 저장
+			}
+			sum -= num[start++]; // 시작지점 이동(이동하면서 현재 시작지점 값을 빼줌)
 		}
 	}
+
+		
 
 	if (result == 100000001)
 	{
