@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define MIN(x,y) x<y?x:y
 
-int num[10000];
+int num[100000];
 
 int main()
 {
@@ -29,8 +29,6 @@ int main()
 			sum -= num[start++]; // 시작지점 이동(이동하면서 현재 시작지점 값을 빼줌)
 		}
 	}
-
-		
 
 	if (result == 100000001)
 	{
