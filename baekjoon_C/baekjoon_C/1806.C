@@ -6,29 +6,37 @@ int num[10000];
 int main()
 {
 	int N, S;
-	int i, j;
-	int sum, result;
+	int sum = 0;
+	int result = 100000001;
+
+	int start = 0;
+	int end = 0;
 
 	scanf("%d %d", &N, &S);
 
-	for (i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		scanf("%d", &num[i]);
 	}
 
-	result = 100000001;
-	for (i = 0; i < N; i++)
+	while (end <= N)
 	{
-		sum = num[i];
-		for (j = i + 1; j < N; j++)
+		if (sum >= S) // 현재 부분합이 S 이상이면 
 		{
-			sum = sum + num[j];	// sum에 num[j]를 더해준다
-			if (sum > S)	// 만약 sum이 S보다 커진다면
+			if (result > (end - start)) // result보다 현재 선택된 수의 개수가 작다면
 			{
-				if (result > (j - i + 1))	// result보다 선택된 수의 개수가 작다면 result에 sum을 저장
-				{
-					result = (j - i + 1);
-				}
+				result = end - start;	// result에 현재 개수 저장
+			}
+			sum -= num[start++]; // 시작지점을 이동 (이동하기 전에 시작지점 값을 빼준다)
+		}
+		else // 현재 부분합이 S가 안된다면
+		{
+			if (end < N) // 끝 지점이 N보다 작다면 
+			{
+				sum += num[end++]; // sum에 끝지점을 더해주고 끝지점을 이동시켜준다
+			}
+			else
+			{
 				break;
 			}
 		}
