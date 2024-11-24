@@ -1,11 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
+int num[10000];
+
 int main()
 {
 	int N, S;
 	int i, j;
-	int num[10000];
 	int sum, result;
 
 	scanf("%d %d", &N, &S);
