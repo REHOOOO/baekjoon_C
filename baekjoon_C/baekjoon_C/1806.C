@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#define MIN(x,y) x<y?x:y
 
 int num[10000];
 
@@ -24,10 +25,7 @@ int main()
 
 		while (sum >= S) // 합이 S 이상이면
 		{ 
-			if (result > (end - start)) // result가 현재 선택 개수보다 크다면
-			{
-				result = end - start; // 최소 길이 저장
-			}
+			result = MIN(result, (end - start));
 			sum -= num[start++]; // 시작지점 이동(이동하면서 현재 시작지점 값을 빼줌)
 		}
 	}
