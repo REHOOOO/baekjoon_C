@@ -420,5 +420,8 @@
     <ClCompile Include="9252.C">
       <Filter>소스 파일\Gold IV</Filter>
     </ClCompile>
+    <ClCompile Include="10942.C">
+      <Filter>소스 파일\Gold IV</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
