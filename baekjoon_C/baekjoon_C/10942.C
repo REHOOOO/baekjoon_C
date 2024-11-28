@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int num[2001];
+int dp[2001][2001];
 int S[1000000];
 int E[1000000];
 
@@ -26,35 +27,34 @@ int main()
 	}
 
 	//// 팰린드롬 찾기 ////
-	int start, end;
-	int flag;
+	
+	for (i = 1; i <= N; i++)
+	{
+		dp[i][i] = 1;	// 길이가 1일때
+		if (i != N)
+		{
+			if (num[i] == num[i + 1])	// 길이가 2일때
+			{
+				dp[i][i + 1] = 1;
+			}
+		}
+	}
 
+	for (int len = 3; len <= N; len++)	// 길이가 3 이상 일때 
+	{
+		for (int start = 1; start <= N - len + 1; start++)	// 시작지점
+		{
+			int end = start + len - 1;	// 끝지점
+			if (num[start] == num[end] && dp[start + 1][end - 1] == 1) // 3부터 차근차근 올라가기 때문에 이전값들이 팰린드롬인지만 확인하면 됨
+			{
+				dp[start][end] = 1; // 팰린드롬
+			}
+		}
+	}
+
+	//// 출력 ////
 	for (i = 0; i < M; i++)
 	{
-		start = S[i];
-		end = E[i];
-		flag = 1;
-		while (start < end)
-		{
-			if (num[start] == num[end])	// 숫자가 같다면 
-			{
-				start++;
-				end--;
-			}
-			else	// 숫자가 다르다면
-			{
-				flag = 0;
-				break;
-			}
-		}
-		
-		if (flag == 0)
-		{
-			printf("0\n");
-		}
-		else
-		{
-			printf("1\n");
-		}
+		printf("%d\n", dp[S[i]][E[i]]);
 	}
 }
