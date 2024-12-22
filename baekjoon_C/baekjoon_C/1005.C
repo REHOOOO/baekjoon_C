@@ -1,34 +1,40 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
+
+#define MAX 1000
 
 int T; // 테스트케이스의 개수
 int N, K;	// 건물의 개수, 건설 순서 개수 
 int X, Y;
-int D[1000];	// 건설 시간
+int D[MAX];	// 건설 시간
 int W;	// 목표 건물
 
-int graph[1000][1000] = { 0, };
-int calc = 0;
-int max = -1;
+int graph[MAX][MAX];
+int dp[MAX];
 
-void dfs(int node)
+int dfs(int node)
 {
-	calc += D[node];
+	if (dp[node] != -1)	// 이미 계산이 된 경우 
+	{
+		return dp[node];
+	}
+
+	dp[node] = D[node];
 
 	for (int i = 0; i < N ; i++)
 	{
-		if (graph[node][i] == 1)
+		if (graph[i][node] == 1)	// i -> node로 연결된 경우
 		{
-			dfs(i);
+			int time = dfs(i);	// 선행 노드들의 값을 가져옴
+			if (dp[node] < time + D[node])	// 현재 저장 값보다 선행 노드들 값이 더 클 경우 
+			{
+				dp[node] = time + D[node]; // 현재 노드 값에 선행 노드들의 값을 더해서 저장
+			}
 		}
 	}
 	
-	if (max < calc)	// 계산값이 max 보다 클 경우 max값을 바꿈
-	{
-		max = calc;
-	}
-
-	calc -= D[node];
+	return dp[node];
 }
 
 int main()
@@ -36,6 +42,10 @@ int main()
 	scanf("%d", &T);
 	for (int i = 0; i < T; i++)
 	{
+		/////// 초기화 /////////
+		memset(graph, 0, sizeof(graph));
+		memset(dp, -1, sizeof(dp));
+
 		////// 입력 ///////
 		scanf("%d %d", &N, &K);
 
@@ -46,25 +56,15 @@ int main()
 		for (int j = 0; j < K; j++)
 		{
 			scanf("%d %d", &X, &Y);
-			graph[Y-1][X-1] = 1;
+			graph[X - 1][Y - 1] = 1;
 		}
 		
 		scanf("%d", &W);
 
 		////// 최소 시간 찾는 프로그램 ///////
-		dfs(W - 1);
-		printf("%d", max);
 		
-		/////// 초기화 /////////
-		max = -1;
-		calc = 0;
-		for (int i = 0; i < N; i++)	// graph, visit 초기화
-		{
-			for (int j = 0; j < N; j++)
-			{
-				graph[i][j] = 0;
-			}
-		}
+		printf("%d\n", dfs(W - 1));
+		
 
 	}
 	
