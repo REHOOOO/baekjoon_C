@@ -1,2 +1,5 @@
 ﻿  2252.C
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2252.C(50,30): warning C4133: '=': 'connGraph *'과(와) 'connGraph *' 사이의 형식이 호환되지 않습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2252.C(90,27): warning C4133: '=': 'connGraph *'과(와) 'connGraph *' 사이의 형식이 호환되지 않습니다.
+D:\code\baekjoon_C\baekjoon_C\baekjoon_C\2252.C(102,27): warning C4133: '=': 'connGraph *'과(와) 'connGraph *' 사이의 형식이 호환되지 않습니다.
   baekjoon_C.vcxproj -> D:\code\baekjoon_C\baekjoon_C\x64\Debug\baekjoon_C.exe
