@@ -7,8 +7,28 @@
 
 int A[MAX];
 int dp[MAX];
-int prev[MAX];
+int index[MAX];	// LIS 자리를 저장 
 int result[MAX];
+
+///// 이진 탐색 /////
+int binarySearch(int* arr, int size, int target)
+{
+	int left = 0;
+	int right = size - 1;
+	while (left <= right)
+	{
+		int mid = (left + right) / 2;
+		if (arr[mid] < target)	// 만약 타겟이 중간보다 크면 
+		{
+			left = mid + 1;	// left는 중간보다 +1
+		}
+		else
+		{
+			right = mid - 1; // 아니면 right를 중간보다 -1
+		}
+	}
+	return left;
+}
 
 int main()
 {
@@ -16,42 +36,38 @@ int main()
 	int N;
 	scanf("%d", &N);
 
+	int len = 0;
 	for (int i = 0; i < N; i++)
 	{
 		scanf("%d", &A[i]);
-	}
 
-	///// 마지막이 A[i]가 되는 수열의 크기를 dp에 저장한다 /////
-	int maxlen = 0;
-	int maxIndex = 0;
-	for (int i = 0; i < N; i++)
-	{
-		dp[i] = 1;	// 기본적으로 자기 자신만으로 1이 된다
-		prev[i] = -1;	// 자신이 출발 점일 경우 -1을 저장해 둔다
-		for (int j = 0; j < i; j++)
+		int pos = binarySearch(dp, len, A[i]); // A[i]가 들어갈 위치를 찾는다 
+		dp[pos] = A[i];	// dp에 A[i]를 넣어준다
+		index[i] = pos;	// index에 현재 순서를 저장
+
+		if (pos == len)	// 만약 가장 큰 값이 들어왔으면 dp 크기를 늘려준다
 		{
-			if (A[j] < A[i] && dp[i] < dp[j] + 1)	// 앞 쪽의 숫자가 자신보다 작고 dp가 자신보다 크면 dp를 변경해준다
-			{
-				dp[i] = dp[j] + 1;	// 자신까지 포함되어 1 추가 된다 
-				prev[i] = j;	// 이전 숫자 인덱스를 저장해 두어 역추적을 할 수 있도록 해준다
-			}
-		}
-		if (dp[i] > maxlen)	// 현재까지의 최대값보다 크면 저장해준다
-		{
-			maxlen = dp[i];
-			maxIndex = i;
+			len++;
 		}
 	}
 
-	int temp = maxIndex;	// 처음 temp는 저장해둔 가장 큰 값의 인덱스 
-	for (int i = maxlen-1; i >= 0; i--)	// 끝에서 부터 채워 넣는다 
+
+	int temp = N - 1;	// 배열의 끝에서부터 시작
+	int i = len - 1;  // LIS의 길이를 기준으로 시작
+	
+	while (i >= 0)
 	{
-		result[i] = A[temp];	// temp 순서에 있는 숫자를 result에 저장
-		temp = prev[temp];		// prev[temp]에 저장된 앞 숫자의 인덱스를 가져온다
+		if (index[temp] == i)	// 만약 index[temp]가 i와 같다면 (시작은 가장 큰 번호)
+		{
+			result[i] = A[temp];	// i순서의 숫자를 불러와 result i순서에 저장
+			i--;	// i를 하나 낮추어 찾는다 
+		}
+		temp--;
 	}
 
-	printf("%d\n", maxlen);
-	for (int i = 0; i < maxlen; i++)
+	////// 결과 출력 //////
+	printf("%d\n", len);
+	for (int i = 0; i < len; i++)
 	{
 		printf("%d ", result[i]);
 	}
