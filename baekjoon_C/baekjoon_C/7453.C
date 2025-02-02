@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compare(const void* a, const void* b)	// ¿À¸§Â÷¼ø Á¤·Ä
+int compare(const void* a, const void* b)	// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 {
 	return (*(int*)a - *(int*)b);
 }
@@ -14,7 +14,7 @@ int D[4000];
 
 int main()
 {
-	int n;	// ¹è¿­ÀÇ Å©±â
+	int n;	// ë°°ì—´ì˜ í¬ê¸°
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++)
@@ -22,50 +22,50 @@ int main()
 		scanf("%d %d %d %d", &A[i], &B[i], &C[i], &D[i]);
 	}
 
-	int* sumAB = (int*)malloc(n * n * sizeof(int));		// AB¸¦ ´õÇÑ ¸ğµç °ªµéÀ» ÀúÀå
-	int* sumCD = (int*)malloc(n * n * sizeof(int));		// CD¸¦ ´õÇÑ ¸ğµç °ªµéÀ» ÀúÀå
+	int* sumAB = (int*)malloc(n * n * sizeof(int));		// ABë¥¼ ë”í•œ ëª¨ë“  ê°’ë“¤ì„ ì €ì¥
+	int* sumCD = (int*)malloc(n * n * sizeof(int));		// CDë¥¼ ë”í•œ ëª¨ë“  ê°’ë“¤ì„ ì €ì¥
 	int idx = 0;
 
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			sumAB[idx] = A[i] + B[j];	// AB¸¦ ´õÇÑ °ªµéÀ» ³Ö¾îÁØ´Ù
-			sumCD[idx] = C[i] + D[j];	// CD¸¦ ´õÇÑ °ªµéÀ» ³Ö¾îÁØ´Ù
+			sumAB[idx] = A[i] + B[j];	// ABë¥¼ ë”í•œ ê°’ë“¤ì„ ë„£ì–´ì¤€ë‹¤
+			sumCD[idx] = C[i] + D[j];	// CDë¥¼ ë”í•œ ê°’ë“¤ì„ ë„£ì–´ì¤€ë‹¤
 			idx++;
 		}
 	}
 
-	qsort(sumAB, n * n, sizeof(int), compare);	// ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
-	qsort(sumCD, n * n, sizeof(int), compare);	// ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+	qsort(sumAB, n * n, sizeof(int), compare);	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
+	qsort(sumCD, n * n, sizeof(int), compare);	// ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 
-	int count = 0;
+	long long int count = 0;
 	int i = 0;
 	int j = n * n - 1;
 
-	///// ÅõÆ÷ÀÎÅÍ /////
+	///// íˆ¬í¬ì¸í„° /////
 	while (i < n * n && j >= 0)
 	{
 		int sum = sumAB[i] + sumCD[j];
-		if (sum == 0)	// sumÀÌ 0ÀÌ¸é
+		if (sum == 0)	// sumì´ 0ì´ë©´
 		{
 			int countAB = 1;
 			int countCD = 1;
-			while (i + 1 < n * n && sumAB[i] == sumAB[i + 1])	// sumAB¿¡¼­ Áßº¹µÇ´Â °ªÀ» Ä«¿îÆ® ÇØÁØ´Ù
+			while (i + 1 < n * n && sumAB[i] == sumAB[i + 1])	// sumABì—ì„œ ì¤‘ë³µë˜ëŠ” ê°’ì„ ì¹´ìš´íŠ¸ í•´ì¤€ë‹¤
 			{
 				i++;
 				countAB++;
 			}
-			while (j - 1 >= 0 && sumCD[j] == sumCD[j - 1])	// sumCD¿¡¼­ Áßº¹µÇ´Â °ªÀ» Ä«¿îÆ® ÇØÁØ´Ù
+			while (j - 1 >= 0 && sumCD[j] == sumCD[j - 1])	// sumCDì—ì„œ ì¤‘ë³µë˜ëŠ” ê°’ì„ ì¹´ìš´íŠ¸ í•´ì¤€ë‹¤
 			{
 				j--;
 				countCD++;
 			}
-			count += countAB * countCD;	// ´õ ÀÌ»ó ´ÙÀ½ °ªÀÌ °°Áö ¾Ê´Ù¸é °¢°¢ÀÇ Áßº¹µÈ °ª °³¼ö¸¦ °öÇØ count¿¡ Ãß°¡ÇØÁØ´Ù
+			count += countAB * countCD;	// ë” ì´ìƒ ë‹¤ìŒ ê°’ì´ ê°™ì§€ ì•Šë‹¤ë©´ ê°ê°ì˜ ì¤‘ë³µëœ ê°’ ê°œìˆ˜ë¥¼ ê³±í•´ countì— ì¶”ê°€í•´ì¤€ë‹¤
 			i++;
 			j--;
 		}
-		else if (sum < 0)	// sumÀÌ 0º¸´Ù ÀÛÀ¸¸é
+		else if (sum < 0)	// sumì´ 0ë³´ë‹¤ ì‘ìœ¼ë©´
 		{
 			i++;
 		}
@@ -78,5 +78,5 @@ int main()
 	free(sumAB);
 	free(sumCD);
 
-	printf("%d", count);
+	printf("%lld", count);
 }
