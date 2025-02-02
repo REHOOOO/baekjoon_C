@@ -1,5 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void* a, const void* b)	// 오름차순 정렬
+{
+	return (*(int*)a - *(int*)b);
+}
 
 int A[4000];
 int B[4000];
@@ -16,5 +22,49 @@ int main()
 		scanf("%d %d %d %d", &A[i], &B[i], &C[i], &D[i]);
 	}
 
+	int* sumAB = (int*)malloc(n * n * sizeof(int));		// AB를 더한 모든 값들을 저장
+	int* sumCD = (int*)malloc(n * n * sizeof(int));		// CD를 더한 모든 값들을 저장
+	int idx = 0;
 
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			sumAB[idx] = A[i] + B[j];	// AB를 더한 값들을 넣어준다
+			sumCD[idx] = C[i] + D[j];	// CD를 더한 값들을 넣어준다
+			idx++;
+		}
+	}
+
+	qsort(sumAB, n * n, sizeof(int), compare);	// 오름차순으로 정렬
+	qsort(sumCD, n * n, sizeof(int), compare);	// 오름차순으로 정렬
+
+	int count = 0;
+	int i = 0;
+	int j = n * n - 1;
+
+	///// 투포인터 /////
+	while (i < n * n && j >= 0)
+	{
+		int sum = sumAB[i] + sumCD[j];
+		if (sum == 0)	// sum이 0이면
+		{
+			count++;	// count를 1 올려준다
+			i++;
+			j--;
+		}
+		else if (sum < 0)	// sum이 0보다 작으면
+		{
+			i++;
+		}
+		else
+		{
+			j--;
+		}
+	}
+
+	free(sumAB);
+	free(sumCD);
+
+	printf("%d", count);
 }
