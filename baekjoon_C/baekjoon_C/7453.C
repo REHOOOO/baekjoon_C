@@ -49,7 +49,19 @@ int main()
 		int sum = sumAB[i] + sumCD[j];
 		if (sum == 0)	// sum이 0이면
 		{
-			count++;	// count를 1 올려준다
+			int countAB = 1;
+			int countCD = 1;
+			while (i + 1 < n * n && sumAB[i] == sumAB[i + 1])	// sumAB에서 중복되는 값을 카운트 해준다
+			{
+				i++;
+				countAB++;
+			}
+			while (j - 1 >= 0 && sumCD[j] == sumCD[j - 1])	// sumCD에서 중복되는 값을 카운트 해준다
+			{
+				j--;
+				countCD++;
+			}
+			count += countAB * countCD;	// 더 이상 다음 값이 같지 않다면 각각의 중복된 값 개수를 곱해 count에 추가해준다
 			i++;
 			j--;
 		}
