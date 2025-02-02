@@ -49,8 +49,8 @@ int main()
 		int sum = sumAB[i] + sumCD[j];
 		if (sum == 0)	// sum이 0이면
 		{
-			int countAB = 1;
-			int countCD = 1;
+			long long int countAB = 1;
+			long long int countCD = 1;
 			while (i + 1 < n * n && sumAB[i] == sumAB[i + 1])	// sumAB에서 중복되는 값을 카운트 해준다
 			{
 				i++;
