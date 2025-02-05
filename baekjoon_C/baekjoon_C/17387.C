@@ -1,15 +1,18 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
+#define min(X,Y) ((X) < (Y) ? (X) : (Y))
+#define max(X,Y) ((X) > (Y) ? (X) : (Y))
+
 typedef struct // 점을 나타내는 구조체
 {
-	int x, y;
+	long long int x, y;
 } point;
 
 // CCW 알고리즘
 int ccw(point a, point b, point c)
 {
-	long long int result = (long long int)(b.x - a.x) * (c.y - a.y) - (long long int)(b.y - a.y) * (c.x - a.x);
+	long long int result = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 	if (result > 0)			// 반시계 방향
 	{
 		return 1;
@@ -28,8 +31,8 @@ int main()
 {
 	point A, B, C, D;
 
-	scanf("%d %d %d %d", &A.x, &A.y, &B.x, &B.y);
-	scanf("%d %d %d %d", &C.x, &C.y, &D.x, &D.y);
+	scanf("%lld %lld %lld %lld", &A.x, &A.y, &B.x, &B.y);
+	scanf("%lld %lld %lld %lld", &C.x, &C.y, &D.x, &D.y);
 
 	//////// 교차 판별 ////////
 	int ab = ccw(A, B, C) * ccw(A, B, D);
@@ -41,20 +44,26 @@ int main()
 		// 일직선 상에 있을 때, 겹치는지 확인 (예외상황)
 		if (ab == 0 && cd == 0)
 		{
-			// A < B, C < D 일 때 C <= B 이고 A <= D 이면 겹침
-			if (A.x > B.x || (A.x == B.x && A.y > B.y))
+			long long int f_min = 0;
+			long long int f_max = 0;
+			long long int s_min = 0;
+			long long int s_max = 0;
+
+			if (A.x == B.x && B.x == C.x && C.x == D.x)	// 두 선이 세로로 일직선 상에 있을 경우 y를 기준으로 판단
 			{
-				point temp = A;	// AB를 swap해 A < B로 만들어 줌 
-				A = B;
-				B = temp;
+				f_min = min(A.y, B.y);
+				f_max = max(A.y, B.y);
+				s_min = min(C.y, D.y);
+				s_max = max(C.y, D.y);
 			}
-			if (C.x > D.x || (C.x == D.x && C.y > D.y))
+			else   // 세로로 일직선이 아닐경우 x를 기준으로 판단
 			{
-				point temp = C;	// CD를 swap해 C < D로 만들어 줌
-				C = D;
-				D = temp;
+				f_min = min(A.x, B.x);
+				f_max = max(A.x, B.x);
+				s_min = min(C.x, D.x);
+				s_max = max(C.x, D.x);
 			}
-			if ((C.x <= B.x && A.x <= D.x) && ((C.y <= B.y && A.y <= D.y)))	// C <= B 이고 A <= D
+			if (f_max >= s_min && s_max >= f_min)	// 각 선분의 오른쪽 부분이 다른 선분의 왼쪽과 같거나 오른쪽에 있어야 함 (x기준으로 판단할 경우)
 			{
 				printf("1");
 				return 0;
