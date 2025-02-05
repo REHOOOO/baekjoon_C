@@ -9,7 +9,7 @@ typedef struct // 점을 나타내는 구조체
 // CCW 알고리즘
 int ccw(point a, point b, point c)
 {
-	int result = (b.x - a.x) * (c.y - a.x) - (b.y - a.y) * (c.x - a.x);
+	long long int result = (long long int)(b.x - a.x) * (c.y - a.y) - (long long int)(b.y - a.y) * (c.x - a.x);
 	if (result > 0)			// 반시계 방향
 	{
 		return 1;
@@ -42,13 +42,13 @@ int main()
 		if (ab == 0 && cd == 0)
 		{
 			// A < B, C < D 일 때 C <= B 이고 A <= D 이면 겹침
-			if (A.x > B.x)
+			if (A.x > B.x || (A.x == B.x && A.y > B.y))
 			{
 				point temp = A;	// AB를 swap해 A < B로 만들어 줌 
 				A = B;
 				B = temp;
 			}
-			if (C.x > D.x)
+			if (C.x > D.x || (C.x == D.x && C.y > D.y))
 			{
 				point temp = C;	// CD를 swap해 C < D로 만들어 줌
 				C = D;
